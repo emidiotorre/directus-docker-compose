@@ -37,6 +37,25 @@ chmox +x ./test-nginx.sh
 docker-compose up -d
 ```
 
+### Contributing
+
+Feel free to open an issue or submit a pull request.
+
+Things I would like to add:
+
+- [ ] Add a script to automate the initial configuration
+- [ ] Add a script to select the directus extensions to install
+- [ ] Support otherservices like [Laradock](https://github.com/laradock/laradock)
+- [ ] Add Rsync scripts to easily move the files between different hosts
+
+### Author
+
+- Emidio Torre [@emid_io](https://twitter.com/emid_io)
+
+### License
+
+This project is open source and available under the [MIT License](LICENSE).
+
 ### Useful Commands
 
 ```bash
