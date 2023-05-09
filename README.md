@@ -26,11 +26,9 @@ clone this repo and edit the `docker-compose.yml` and the `nginx/default.conf` f
 
 ```bash
 # provision certificates
-chmox +x ./init-letsencrypt.sh
 ./init-letsencrypt.sh
 
 # test nginx configuration
-chmox +x ./test-nginx.sh
 ./test-nginx.sh
 
 # start the containers
@@ -43,10 +41,11 @@ Feel free to open an issue or submit a pull request.
 
 Things I would like to add:
 
+- [ ] Make Certbot optional, to work in development and simplify testing the setup
 - [ ] Add a script to automate the initial configuration
 - [ ] Add a script to select the directus extensions to install
-- [ ] Support otherservices like [Laradock](https://github.com/laradock/laradock)
-- [ ] Add Rsync scripts to easily move the files between different hosts
+- [ ] Support other services like [Laradock](https://github.com/laradock/laradock)
+- [ ] Add Rsync scripts to easily move configuration and data between different hosts
 
 ### Author
 
