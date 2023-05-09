@@ -2,6 +2,7 @@ version: "3"
 services:
   nginx:
     image: nginx:1.23-alpine
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
@@ -13,13 +14,16 @@ services:
       - directus
     depends_on:
       - directus
+    #command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   certbot:
     image: certbot/certbot
+    restart: unless-stopped
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
     networks:
       - directus
+    #entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
   database:
     container_name: database
     image: postgis/postgis:15-master
